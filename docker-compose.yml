@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: nest-db
+    image: postgres:15.2-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+  app:
+    container_name: nest-app
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+volumes:
+  postgres:
