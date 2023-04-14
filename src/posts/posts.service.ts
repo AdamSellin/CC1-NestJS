@@ -15,10 +15,7 @@ export class PostsService {
       },
     });
 
-    return {
-      message: 'Post created successfully',
-      success: true,
-    }
+    return post;
   }
 
   findAll() {
@@ -54,10 +51,7 @@ export class PostsService {
       throw new HttpException('Post not found', 404);
     }
 
-    return {
-      message: 'Post updated successfully',
-      success: true,
-    }
+    return post;
   }
 
   remove(id: string) {
@@ -71,9 +65,6 @@ export class PostsService {
       throw new HttpException('Post not found', 404);
     }
 
-    return {
-      message: 'Post deleted successfully',
-      success: true,
-    }
+    return post;
   }
 }

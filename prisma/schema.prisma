@@ -12,6 +12,6 @@ datasource db {
 
 model Post {
   id        String      @default(uuid()) @id
-  title     String      @db.VarChar(50)
+  title     String      @db.VarChar(50) @unique
   body      String
 }
