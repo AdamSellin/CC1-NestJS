@@ -7,7 +7,7 @@ CC1 NestJS
 ```bash
 $ docker-compose up -d   
 
-$ docker-compose exec nest-app npx migrate dev  
+$ docker-compose exec app npx migrate dev  
 ```
 
 ## License
